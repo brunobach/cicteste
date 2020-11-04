@@ -23,7 +23,7 @@ export const FormGroupSection = styled.div`
     font-size: 1.1rem;
     &:focus {
       content: "";
-      background: #fafaf3;
+      background: white;
       border: 2px solid;
 
       border-image-source: linear-gradient(

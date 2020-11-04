@@ -30,6 +30,9 @@ export default createGlobalStyle`
         align-items: center;
         background-color: var(--color-green);
         height: 1.8rem;
+        position: relative;
+        z-index: 800;
+        box-shadow: 0px 4px 7px -5px rgba(0,0,0,0.75);
         span {
             color: white;
         }
@@ -38,6 +41,7 @@ export default createGlobalStyle`
             border: 0;
             margin-left: 10rem;
             padding: 0 20px;
+            border-radius: 2px;
             color: var(--color-green);
             cursor: pointer;
             font-size: 0.9rem;

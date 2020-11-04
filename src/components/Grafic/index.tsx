@@ -84,56 +84,6 @@ const Grafic: React.FC<Props> = ({variant}) => {
           fill="#f9f9f9"
         />
       </g>
-      <g id="Layer_2" data-name="Layer 2">
-        <rect
-          className="stick"
-          x="139.53999"
-          y="84.839996"
-          width="68.900002"
-          height="1.4299999"
-          id="rect93"
-          fill="#3069b3ff"
-        />
-        <path
-          className="stick"
-          d="m 408.49,91.63 a 2.58,2.58 0 1 0 -2.57,-2.57 2.57,2.57 0 0 0 2.57,2.57 z"
-          transform="translate(-198.04,-3.5)"
-          id="path95"
-          fill="#3069b3ff"
-        />
-        <rect
-          className="stick"
-          x="173.14999"
-          y="105.63"
-          width="46.77"
-          height="1.9400001"
-          id="rect97"
-          fill="#a6ce39ff"
-        />
-        <path
-          className="stick"
-          d="m 417.71,113.16 a 3.06,3.06 0 1 0 -3.06,-3.06 3.06,3.06 0 0 0 3.06,3.06 z"
-          transform="translate(-198.04,-3.5)"
-          id="path99"
-          fill="#a6ce39ff"
-        />
-        <rect
-          className="stick"
-          x="195.84"
-          y="124.8"
-          width="44.099998"
-          height="1.83"
-          id="rect101"
-          fill="#00b8f1ff"
-        />
-        <path
-          className="stick"
-          d="m 437.74,132.11 a 2.9,2.9 0 1 0 -2.9,-2.9 2.9,2.9 0 0 0 2.9,2.9 z"
-          transform="translate(-198.04,-3.5)"
-          id="path103"
-          fill="#00b8f1ff"
-        />
-      </g>
     </svg>
   );
 };

@@ -15,7 +15,6 @@ import {
   Container,
   HeaderWrapper,
   Header,
-  HeaderLink,
   Content,
   ContentBody,
 } from "./styles";
@@ -72,12 +71,6 @@ const Section: React.FC<Props> = ({ variant, title, description }) => {
           setValue(1);
           break;
         case 1:
-          setValue(2);
-          break;
-        case 2:
-          setValue(3);
-          break;
-        case 3:
           setValue(0);
           break;
         default:
@@ -101,7 +94,11 @@ const Section: React.FC<Props> = ({ variant, title, description }) => {
           <h1>
             <Logo />
           </h1>
-          <HeaderLink></HeaderLink>
+          <h2 className={
+            scrollY >= scrollThreshold
+              ? "scrollDown text " + variant
+              : "scrollUp text " + variant
+          }>INTEGRADO - INTELIGENTE - INTUITIVO</h2>
         </Header>
       </HeaderWrapper>
       <EffectBlue />
@@ -143,8 +140,6 @@ const Section: React.FC<Props> = ({ variant, title, description }) => {
                   title={funcionalidades[2].title}
                   description={funcionalidades[2].description}
                 />
-              </div>
-              <div className="card-group">
                 <Card
                   IconVariant="ShieldAlt"
                   title={funcionalidades[3].title}
@@ -177,8 +172,6 @@ const Section: React.FC<Props> = ({ variant, title, description }) => {
                   title={funcionalidades[8].title}
                   description={funcionalidades[8].description}
                 />
-              </div>
-              <div className="card-group">
                 <Card
                   IconVariant="Book"
                   title={funcionalidades[9].title}
@@ -191,11 +184,11 @@ const Section: React.FC<Props> = ({ variant, title, description }) => {
                 />
               </div>
             </Carousel>
-            <Dots value={value} onChange={onchange} number={4} />
+            <Dots value={value} onChange={onchange} number={2} />
             <Grafic variant={classGrafic} />
             <h2 className="pedidos">+5 MIL PEDIDOS DE CRÉDITO</h2>
             <h2 className="creditos">+15 BILHÕES DE CRÉDITO</h2>
-            <h2 className="empresas">+90 EMPRESAS</h2>
+            <h2 className="empresas">90+ EMPRESAS</h2>
           </div>
           < EffectBlueGreen />
           < Outlined variant="img-outlined-func"/>

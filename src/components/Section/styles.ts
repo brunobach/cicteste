@@ -4,7 +4,7 @@ import { HiMenu } from "react-icons/hi";
 export const Container = styled.div`
   --padding-top: 100px;
   --padding-bottom: 120px;
-  --heading-font-size: 32px;
+  --heading-font-size: 3.5rem;
   --content-width: 100%;
   --video-display: none;
   --direction-flex: row;
@@ -62,6 +62,7 @@ export const Container = styled.div`
     --alignH2: left;
     --alignP: justify;
     --logoInversa: #a4a2a2;
+    --margin-top: 0px;
   }
   &.contato {
     --bg-color: var(--color-border) !important;
@@ -235,14 +236,12 @@ export const Header = styled.header`
   background: var(--bg-color);
 
   display: flex;
-  justify-content: space-between;
   align-items: center;
 
   padding: 20px 0 0 10%;
   padding-bottom: 10px;
   > h1 {
-    display: flex;
-    align-items: center;
+    flex-grow: 0;
     > span {
       color: var(--text-color);
       margin: 10px 16px;
@@ -259,9 +258,6 @@ export const Header = styled.header`
   right: 0;
 
   &.video {
-    #textoLogo {
-      fill: white;
-    }
     #LogoMenor {
       fill: white;
     }
@@ -275,9 +271,33 @@ export const Header = styled.header`
   &.scrollUp {
     margin-top: 50px;
     animation: slide-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    #textoLogo {
+      fill: #a4a2a2;
+    }
+    .text {
+      display: none;
+    }
+  }
+  > h2 {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    max-width: 50%;
+    letter-spacing: -.05rem;
+    font-family: 'Poppins', sans-serif;
   }
   &.scrollDown {
     animation: slide-top 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    #textoLogo {
+      fill: transparent;
+    }
+    .text {
+      color: var(--color-primary);
+      &.video {
+        color: white;
+      }
+
+    }
   }
 
   @keyframes slide-top {
@@ -319,8 +339,6 @@ export const Content = styled.div`
   flex-direction: var(--direction-flex);
 
 
-  
-
   > img {
     width: 100%;
     max-width: 65%;
@@ -329,6 +347,10 @@ export const Content = styled.div`
     margin-right: -10rem;
     display: var(--image-display);
     @media (max-width: 1280px) {
+      width: 80%;
+      max-width: 70%;
+    }
+    @media (max-width: 1000px) {
       display: none;
     }
   }
@@ -339,7 +361,7 @@ export const Content = styled.div`
     max-width: 80%;
 
     > img {
-      width: 50%;
+      width: 65%;
     }
   }
   @media (max-width: 600px) {
@@ -368,8 +390,8 @@ export const ContentBody = styled.div`
   > h2 {
     font-size: var(--heading-font-size);
     color: var(--logo-color);
-    line-height: 45px;
-    letter-spacing: -3px;
+    line-height: 4rem;
+    letter-spacing: -0.15rem;
     text-align: var(--alignH2);
     @media (max-width: 600px) {
       font-size: 2rem;
@@ -433,7 +455,7 @@ export const ContentBody = styled.div`
     display: var(--footer-display);
   }
   .BrainhubCarousel__dot--selected {
-    background-color: #a6ce39;
+    background-color: #c4c4c4;
   }
   .BrainhubCarousel__dots,
   .BrainhubCarousel__dot--selected {
@@ -441,33 +463,23 @@ export const ContentBody = styled.div`
       box-shadow: 0px 6px 15px -4px rgba(186,186,186,1);
     }
     li:nth-child(1) {
-      border-top-left-radius: 5px;
-      border-bottom-left-radius: 5px;
-      border-left: 2px solid white;
-      border-top: 2px solid white;
-      border-bottom: 2px solid white;
+      border: 2px solid #000;
+      border-width: 2px 0px 2px 2px;
+      border-image: linear-gradient(70deg,
+        var(--color-primary),
+          var(--color-green));
+      border-image-slice: 1;
       animation: animate 8s linear infinite;
     }
     li:nth-child(2) {
-      border-top: 2px solid white;
-      border-bottom: 2px solid white;
+      border: 2px solid #000;
+      border-width: 2px 2px 2px 0px;
+      border-image: linear-gradient(-70deg,
+        var(--color-primary),
+          var(--color-green));
+      border-image-slice: 1;
       animation-delay: 12s;
       animation: animate-01 8s linear infinite;
-    }
-    li:nth-child(3) {
-      border-top: 2px solid white;
-      border-bottom: 2px solid white;
-      animation-delay: 18s;
-      animation: animate-02 8s linear infinite;
-    }
-    li:nth-child(4) {
-      border-top-right-radius: 5px;
-      border-bottom-right-radius: 5px;
-      border-right: 2px solid white;
-      border-top: 2px solid white;
-      animation-delay: 24s;
-      border-bottom: 2px solid white;
-      animation: animate-03 8s linear infinite;
     }
   }
   @keyframes animate {
@@ -516,65 +528,28 @@ export const ContentBody = styled.div`
       );
     }
   }
-  @keyframes animate-02 {
-    0% {
-      background: linear-gradient(
-        90deg,
-        rgba(136, 136, 136, 0.1) 0%,
-        rgba(92, 92, 92, 0.1) 100%
-      );
-    }
-    50% {
-      background: linear-gradient(
-        90deg,
-        rgba(136, 136, 136, 0.5) 0%,
-        rgba(92, 92, 92, 0.5) 100%
-      );
-    }
-    100% {
-      background: linear-gradient(
-        90deg,
-        rgba(136, 136, 136, 1) 0%,
-        rgba(92, 92, 92, 1) 100%
-      );
-    }
-  }
-  @keyframes animate-03 {
-    0% {
-      background: linear-gradient(
-        90deg,
-        rgba(92, 92, 92, 0.1) 0%,
-        rgba(57, 57, 57, 0.1) 100%
-      );
-    }
-    50% {
-      background: linear-gradient(
-        90deg,
-        rgba(92, 92, 92, 0.5) 0%,
-        rgba(57, 57, 57, 0.5) 100%
-      );
-    }
-    100% {
-      background: linear-gradient(
-        90deg,
-        rgba(92, 92, 92, 1) 0%,
-        rgba(57, 57, 57, 1) 100%
-      );
-    }
-  }
 
   .grafic {
-    margin-top: 20rem;
-    width: 100%;
+    margin-top: 15rem;
+    margin-left: -5rem;
+    width: 50%;
     max-width: 50rem;
 
     &.graficStart {
-      .elipseVerde,
-      .elipseAzulClaro,
+      .elipseVerde {
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        animation: dash 4s ease-in forwards;
+      }
+      .elipseAzulClaro{
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        animation: dash 4s ease-in forwards;
+      }
       .elipseAzulEscuro {
         stroke-dasharray: 1000;
         stroke-dashoffset: 1000;
-        animation: dash 5s linear forwards;
+        animation: dash 6.5s ease-in forwards;
         animation-iteration-count: 1;
       }
       .stick {
@@ -593,26 +568,29 @@ export const ContentBody = styled.div`
     color: #a6ce39;
     opacity: 0;
     position: absolute;
-    top: 70%;
-    left: 55%;
+    font-size: 3rem;
+    top: 76%;
+    left: 34%;
     animation-delay: 6s;
     animation: stickDash 2s ease-in forwards;
   }
   .pedidos {
     color: #3069b3;
     opacity: 0;
+    font-size: 3rem;
     position: absolute;
-    top: 67%;
-    left: 50%;
+    top:80%;
+    left: 34%;
     animation-delay: 6s;
     animation: stickDash 2s ease-in forwards;
   }
   .empresas {
     color: #00b8f1;
+    font-size: 3rem;
     opacity: 0;
     position: absolute;
-    top: 74%;
-    left: 60%;
+    top: 72%;
+    left: 34%;
     animation-delay: 6s;
     animation: stickDash 2s ease-in forwards;
   }

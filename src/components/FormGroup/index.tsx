@@ -10,6 +10,7 @@ const FormGroup: React.FC = () => {
         <input type="text" placeholder="Empresa"></input>
         <input type="number" placeholder="Celular"></input>
         <input type="email" placeholder="E-mail"></input>
+        <input type="text" placeholder="Site"></input>
         <textarea placeholder="Mensagem"></textarea>
         <button className="buttonClass" type="button">ENVIAR</button>
         <span>Estamos prontos para atender e resolver!</span>
