@@ -30,8 +30,13 @@ const FormGroup: React.FC = () => {
         message,
       })
     });
-
-    alert('Cadastro Realizado com sucesso')
+    setName('');
+    setCompany('');
+    setSite('');
+    setContact('');
+    setEmail('');
+    setMessage('');
+    alert('Contato Realizado com sucesso.');
   }
 
 

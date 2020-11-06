@@ -281,14 +281,18 @@ export const Header = styled.header`
     margin-top: 50px;
     animation: slide-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
     padding: 20px 0 0 5%;
-    h1 {
-      margin: 0;
-    }
+    margin-left: 10.1vh;
     #textoLogo {
       fill: #a4a2a2;
     }
     .text {
       display: none;
+    }
+    @media(max-width: 800px){
+      margin-left: 0;
+      h1 {
+      margin: 0;
+    }
     }
   }
   > h2 {
@@ -315,7 +319,7 @@ export const Header = styled.header`
       .text {
       display: none;
     }
-
+  }
   @keyframes slide-top {
     0% {
       transform: translateY(50px);
@@ -338,7 +342,7 @@ export const Header = styled.header`
       margin-left: 25vw;
     }
   }
-}
+
 `;
 export const ButtonHamburger = styled(HiMenu)`
   width: 60px;
