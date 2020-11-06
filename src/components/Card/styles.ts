@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ContainerCard = styled.div`
-  margin: 15px;
+  margin: 30px 15px 15px 30px;
   cursor: pointer;
   width: 20rem;
   height: 20rem;
@@ -9,7 +9,7 @@ export const ContainerCard = styled.div`
   border-image-source: linear-gradient(
     70deg,
     var(--color-primary),
-    var(--color-green)
+    var(--color-green-light)
   );
   border-image-slice: 1;
   
@@ -17,11 +17,14 @@ export const ContainerCard = styled.div`
 
 export const Icon = styled.div`
 margin: -30px 0 0 30px;
-padding: 0.5rem;
-width: 4rem;
-height: 4rem;
 background-color: var(--color-secondary);
-z-index: 10;
+width: 3.5rem;
+> img {
+  margin: 0px 0.5rem;
+  width: 42px;
+  height: auto;
+  z-index: 300;
+}
 
 `;
 
@@ -33,7 +36,7 @@ export const ContentCard = styled.div`
   > h2 {
     text-align: center;
     margin: 0 10px;
-    color: var(--color-primary);
+    color: #379ed4;
   }
   > p {
     margin: 20px 15px;

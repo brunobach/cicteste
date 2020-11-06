@@ -1,14 +1,17 @@
-import BalanceScale from "./balanceScale.svg";
-import Book from "./book.svg";
-import ChartLine from "./chartLine.svg";
-import CloudMeatBall from "./cloudMeatBall.svg";
-import ExclamationTriangle from "./exclamationTriangle.svg";
-import FilePrescription from "./filePrescription.svg";
-import Landmark from "./landmark.svg";
-import LayerGroup from "./layerGroup.svg";
-import ProjectDiagram from "./projectDiagram.svg";
-import ShieldAlt from "./shieldAlt.svg";
-import SiteMap from "./sitemap.svg";
+import LayerGroup from "./1.png";
+import CloudMeatBall from "./2.png";
+import FilePrescription from "./3.png";
+import ShieldAlt from "./4.png";
+import SiteMap from "./5.png";
+import Landmark from "./6.png";
+import ExclamationTriangle from "./7.png";
+import BalanceScale from "./8.png";
+import ProjectDiagram from "./9.png";
+import Book from "./10.png";
+import ChartLine from "./11.png";
+
+
+
 
 export {
   BalanceScale,

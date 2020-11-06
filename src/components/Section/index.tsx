@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import pc from "../../assets/pc.png";
+import pc from "../../assets/pc1.png";
 import OutlinedBlue from "../../assets/outlined-blue.svg";
 import halftone from "../../assets/hallftone.png";
 import halftoneCut from "../../assets/hallftoneCut.png";
@@ -98,7 +98,7 @@ const Section: React.FC<Props> = ({ variant, title, description }) => {
             scrollY >= scrollThreshold
               ? "scrollDown text " + variant
               : "scrollUp text " + variant
-          }>INTEGRADO - INTELIGENTE - INTUITIVO</h2>
+          }>INTEGRADO INTELIGENTE INTUITIVO</h2>
         </Header>
       </HeaderWrapper>
       <EffectBlue />

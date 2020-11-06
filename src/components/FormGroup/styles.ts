@@ -5,6 +5,9 @@ export const Container = styled.div`
 `;
 
 export const FormGroupSection = styled.div`
+  form {
+
+ 
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -63,7 +66,7 @@ export const FormGroupSection = styled.div`
   button {
     width: 20%;
     height: 2.5rem;
-    background-color: var(--color-green);
+    background-color: #add14b;
     color: white;
     font-family: "Poppins", sans-serif;
     border: 0;
@@ -94,5 +97,6 @@ export const FormGroupSection = styled.div`
   textarea  {
     width: 100%;
   }
+}
 }
 `;

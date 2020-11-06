@@ -4,6 +4,8 @@ import { HiMenu } from "react-icons/hi";
 export const Container = styled.div`
   --padding-top: 100px;
   --padding-bottom: 120px;
+  --padding-left: 32px;
+  --padding-right: 32px;
   --heading-font-size: 3.5rem;
   --content-width: 100%;
   --video-display: none;
@@ -18,6 +20,7 @@ export const Container = styled.div`
   --margin-top: 50px;
   --image-func: none;
   --image-contact: none;
+  --width-h2: 100%;
   &.video {
     --bg-color: var(--color-primary);
     --text-color: var(--color-tertiary);
@@ -63,6 +66,12 @@ export const Container = styled.div`
     --alignP: justify;
     --logoInversa: #a4a2a2;
     --margin-top: 0px;
+    --width-h2: 50%;
+
+    @media(max-width: 800px){
+      --padding-left: 2rem;
+      --padding-right: 2rem;
+    }
   }
   &.contato {
     --bg-color: var(--color-border) !important;
@@ -271,6 +280,10 @@ export const Header = styled.header`
   &.scrollUp {
     margin-top: 50px;
     animation: slide-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    padding: 20px 0 0 5%;
+    h1 {
+      margin: 0;
+    }
     #textoLogo {
       fill: #a4a2a2;
     }
@@ -296,9 +309,12 @@ export const Header = styled.header`
       &.video {
         color: white;
       }
-
     }
   }
+  @media (max-width: 800px){
+      .text {
+      display: none;
+    }
 
   @keyframes slide-top {
     0% {
@@ -319,9 +335,10 @@ export const Header = styled.header`
   @media (max-width: 600px) {
     justify-content: center;
     > h1 {
-      margin-left: 10vw;
+      margin-left: 25vw;
     }
   }
+}
 `;
 export const ButtonHamburger = styled(HiMenu)`
   width: 60px;
@@ -338,37 +355,33 @@ export const Content = styled.div`
   display: flex;
   flex-direction: var(--direction-flex);
 
+  
 
   > img {
-    width: 100%;
-    max-width: 65%;
-    height: auto;
+    position: absolute;
+    width: 50%;
+    top: 20%;
+    right: -50px;
     margin-top: -4rem;
-    margin-right: -10rem;
     display: var(--image-display);
     @media (max-width: 1280px) {
-      width: 80%;
-      max-width: 70%;
-    }
-    @media (max-width: 1000px) {
       display: none;
     }
   }
 
-  padding: var(--padding-top) 32px var(--padding-bottom);
+  padding: var(--padding-top) var(--padding-right) var(--padding-bottom)var(--padding-left);
+  
+ 
+  @media (max-width: 1280px) {
+    margin: 0 5%;
+    max-width: 100%;
+    padding: var(--padding-top) 0 var(--padding-bottom) 0;
 
-  @media (max-width: 1500px) {
-    max-width: 80%;
-
-    > img {
-      width: 65%;
-    }
   }
   @media (max-width: 600px) {
-      max-width: 90%;
-      margin: 0;
+      max-width: 100%;
+      margin: 0 5%;
       padding-top: 20vh;
-
   }
 `;
 
@@ -389,12 +402,16 @@ export const ContentBody = styled.div`
 
   > h2 {
     font-size: var(--heading-font-size);
-    color: var(--logo-color);
+    color: var(--color-blue);
     line-height: 4rem;
     letter-spacing: -0.15rem;
     text-align: var(--alignH2);
+    width: var(--width-h2);
+    @media (max-width: 1280px) {
+     width: 100%;
+    }
     @media (max-width: 600px) {
-      font-size: 2rem;
+      font-size: 2.1rem;
       letter-spacing: -2px;
       line-height: 45px;
     }
@@ -410,6 +427,14 @@ export const ContentBody = styled.div`
     text-justify: inter-word;
     color: var(--text-color);
     max-width: var(--content-width);
+    width: var(--width-h2);
+
+    @media(max-width: 800px){
+      max-width: 100%;
+    }
+    @media (max-width: 1280px) {
+     width: 100%;
+    }
     
     &.contato {
       margin-left: auto;
@@ -424,7 +449,7 @@ export const ContentBody = styled.div`
   }
   > video {
     display: var(--video-display);
-    width: 800px;
+    width: 70vw;
 
     @media (max-width: 600px) {
       width: 300px;
@@ -439,7 +464,7 @@ export const ContentBody = styled.div`
     flex-wrap: wrap;
 
     .card-box {
-      width: 30%;
+      width: 28%;
     }
   }
 
@@ -563,6 +588,11 @@ export const ContentBody = styled.div`
         stroke-dashoffset: 0;
       }
     }
+
+    @media(max-width: 800px){
+      margin-left: 0;
+      width: 70%;
+    }
   }
   .creditos {
     color: #a6ce39;
@@ -618,19 +648,19 @@ export const ContentBody = styled.div`
     }
 
     .pedidos {
-      font-size: 10px;
-      top: 85%;
-      left: 60%;
+      font-size: 15px;
+      top: 91%;
+      left: 64%;
     }
     .creditos {
-      font-size: 10px;
-      top: 86.5%;
-      left: 63%;
+      font-size: 15px;
+      top: 90%;
+      left: 64%;
     }
     .empresas {
-      font-size: 10px;
-      top: 87.5%;
-      left: 70%;
+      font-size: 15px;
+      top: 89%;
+      left: 64%;
     }
   }
 `;
